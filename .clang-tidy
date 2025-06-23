@@ -1,0 +1,20 @@
+Checks: >
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  bugprone-*,
+  cert-*,
+  concurrency-*,
+  cppcoreguidelines-*,
+  hicpp-*,
+  linuxkernel-*,
+  misc-*,
+  modernize-*,
+  mpi-*,
+  openmp-*,
+  performance-*,
+  portability-*,
+  readability-*
+
+WarningsAsErrors: ''
+HeaderFilterRegex: '.*'
+FormatStyle: file

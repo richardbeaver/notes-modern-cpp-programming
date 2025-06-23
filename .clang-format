@@ -1,0 +1,12 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+
+# Move start of braces to new line
+# BreakBeforeBraces: Allman
+
+# Remove braces around single line code blocks
+# RemoveBracesLLVM: true
+
+# In order to add braces back to single line code blocks that don't have them,
+# this must be explicitly set
+# InsertBraces: true

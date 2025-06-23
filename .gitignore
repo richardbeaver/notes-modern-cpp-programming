@@ -1,0 +1,47 @@
+# === CMake build ===
+/build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+install_manifest.txt
+compile_commands.json
+
+# === Compiled binaries ===
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+*.exe
+*.out
+
+# === Backup and temporary files ===
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+*.log
+
+# === IDE files ===
+.vscode/
+.idea/
+*.code-workspace
+
+# === macOS system files ===
+.DS_Store
+
+# === clangd index ===
+.cache/
+.clangd/
+.clangd-index/
+
+# === Testing output ===
+Testing/
+test_output/
+
+# === Misc ===
+tags
