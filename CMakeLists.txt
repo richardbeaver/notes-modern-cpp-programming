@@ -1,20 +1,14 @@
 # === Project Settings ===
 
-set(PROJECT_NAME "project_template")
-set(TARGET_NAME "main" CACHE STRING "The name of the executable")
+set(PROJECT_NAME "multiple-executables-template")
 set(CXX_STANDARD 20)
 set(MINIMUM_CMAKE_VERSION 3.16)
 
-# List of source files
-set(SOURCE_FILES
-  src/main.cpp
-  src/greeting.cpp
+set(EXECUTABLES
+  exec1
+  exec2
 )
 
-# List of include directories
-set(INCLUDE_DIRS
-  ${CMAKE_SOURCE_DIR}/include
-)
 
 # ===
 # ===
@@ -40,17 +34,17 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # === Targets ===
 
-add_executable(${TARGET_NAME} ${SOURCE_FILES})
-target_include_directories(${TARGET_NAME} PRIVATE ${INCLUDE_DIRS})
+foreach(target IN ITEMS ${EXECUTABLES})
+  add_executable(${target} src/${target}.cpp)
+  target_compile_options(${target}
+    PRIVATE
+      -Wall
+      -Wextra
+      -Werror
+      -pedantic
+      -pedantic-errors
+      -Wconversion
+      -Wsign-conversion
+  )
+endforeach()
 
-# Add compiler warnings
-target_compile_options(${TARGET_NAME}
-  PRIVATE
-    -Wall
-    -Wextra
-    -Werror
-    -pedantic
-    -pedantic-errors
-    -Wconversion
-    -Wsign-conversion
-)

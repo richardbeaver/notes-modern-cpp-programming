@@ -1,6 +1,3 @@
-# Get name of executable from CMake build process
-binary := `grep TARGET_NAME build/CMakeCache.txt | cut -d '=' -f2`
-
 default:
     just --list
 
@@ -14,7 +11,7 @@ release-build:
     cmake -DCMAKE_BUILD_TYPE=Release -S . -B build
     cmake --build build --parallel
 
-run:
+run binary:
     ./build/{{binary}}
 
 clean:
