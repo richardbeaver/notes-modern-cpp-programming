@@ -5,7 +5,7 @@ set(CXX_STANDARD 20)
 set(MINIMUM_CMAKE_VERSION 3.16)
 
 set(EXECUTABLES
-  data_types
+  basic_concepts_i
 )
 
 
