@@ -1,11 +1,12 @@
 # === Project Settings ===
 
 set(PROJECT_NAME "modern-cpp-programming-federico-busato")
-set(CXX_STANDARD 20)
+set(CXX_STANDARD 23)
 set(MINIMUM_CMAKE_VERSION 3.16)
 
 set(EXECUTABLES
   basic_concepts_i
+  basic_concepts_ii
 )
 
 
