@@ -1,12 +1,11 @@
 # === Project Settings ===
 
-set(PROJECT_NAME "multiple-executables-template")
+set(PROJECT_NAME "modern-cpp-programming-federico-busato")
 set(CXX_STANDARD 20)
 set(MINIMUM_CMAKE_VERSION 3.16)
 
 set(EXECUTABLES
-  exec1
-  exec2
+  data_types
 )
 
 
