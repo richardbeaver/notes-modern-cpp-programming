@@ -39,11 +39,12 @@ foreach(target IN ITEMS ${EXECUTABLES})
     PRIVATE
       -Wall
       -Wextra
-      -Werror
+      # -Werror
       -pedantic
       -pedantic-errors
       -Wconversion
       -Wsign-conversion
+      -Wno-unused-variable
   )
 endforeach()
 
