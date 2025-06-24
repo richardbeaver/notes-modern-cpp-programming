@@ -11,8 +11,8 @@ release-build:
     cmake -DCMAKE_BUILD_TYPE=Release -S . -B build
     cmake --build build --parallel
 
-run binary:
-    ./build/{{binary}}
+run executable:
+    ./build/bin/{{executable}}
 
 clean:
     rm -rf build

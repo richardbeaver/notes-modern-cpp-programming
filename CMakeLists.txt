@@ -4,7 +4,7 @@ set(PROJECT_NAME "modern-cpp-programming-federico-busato")
 set(CXX_STANDARD 23)
 set(MINIMUM_CMAKE_VERSION 3.16)
 
-set(EXECUTABLES
+set(SUBDIRECTORIES
   basic_concepts_i
   basic_concepts_ii
 )
@@ -19,9 +19,10 @@ cmake_minimum_required(VERSION ${MINIMUM_CMAKE_VERSION})
 project(${PROJECT_NAME} CXX)
 
 
-# === Build Configuration ===
+# === Global Configuration ===
 
 set(CMAKE_CXX_STANDARD ${CXX_STANDARD})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Use Debug build by default if not specified
 if(NOT CMAKE_BUILD_TYPE)
@@ -32,20 +33,23 @@ endif()
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
-# === Targets ===
+# === Project-Wide Compiler Options ===
 
-foreach(target IN ITEMS ${EXECUTABLES})
-  add_executable(${target} src/${target}.cpp)
-  target_compile_options(${target}
-    PRIVATE
-      -Wall
-      -Wextra
-      # -Werror
-      -pedantic
-      -pedantic-errors
-      -Wconversion
-      -Wsign-conversion
-      -Wno-unused-variable
-  )
+# (Not necessarily best practice for real projects)
+
+add_compile_options(
+  -Wall
+  -Wextra
+  # -Werror
+  -pedantic
+  -pedantic-errors
+  -Wconversion
+  -Wsign-conversion
+  -Wno-unused-variable
+)
+
+# === Add Subdirectories ===
+
+foreach(subdir IN ITEMS ${SUBDIRECTORIES})
+  add_subdirectory(src/${subdir})
 endforeach()
-
