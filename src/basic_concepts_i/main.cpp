@@ -14,18 +14,16 @@ auto main() -> int {
     long l = 4'000'000;
     unsigned u = 65;
 
-    double floating_type = i + d;
-
-    int shorts_become_an_int = h + h;
-
-    long short_and_long_become_a_long = h + l;
-
-    unsigned result_unsigned = u + i;
+    // Implicit numeric type conversion rules
+    double _ = i + d;   // floating point promotion
+    int _ = h + h;      // integer promotion
+    long _ = h + l;     // size promotion
+    unsigned _ = u + i; // sign promotion
 
     std::cout << "implicit sign conversion - "
                  "negative number made unsigned wraps around:\n";
     int neg_i = -75;
-    auto becomes_unsigned_negative = u + neg_i;
+    unsigned becomes_unsigned_negative = u + neg_i;
     std::cout << becomes_unsigned_negative << '\n';
 
     int int_division = i / 2;

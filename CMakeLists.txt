@@ -1,7 +1,7 @@
 # === Project Settings ===
 
 set(PROJECT_NAME "modern-cpp-programming-federico-busato")
-set(CXX_STANDARD 23)
+set(CXX_STANDARD 26)
 set(MINIMUM_CMAKE_VERSION 3.16)
 
 set(SUBDIRECTORIES
@@ -48,7 +48,6 @@ add_compile_options(
   -pedantic-errors
   -Wconversion
   -Wsign-conversion
-  -Wno-unused-variable
 )
 
 # === Add Subdirectories ===
