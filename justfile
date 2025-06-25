@@ -4,6 +4,10 @@ default:
 new-build-debug: clean-debug build-debug
 new-build-release: clean-release build-release
 
+build-and-run executable:
+	just build-debug
+	just run-debug {{executable}}
+
 # Build
 build-debug:
 	cmake -S . -B build/debug -DCMAKE_BUILD_TYPE=Debug
