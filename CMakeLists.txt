@@ -7,6 +7,7 @@ set(MINIMUM_CMAKE_VERSION 3.16)
 set(SUBDIRECTORIES
   basic_concepts_i
   basic_concepts_ii
+  basic_concepts_iii
 )
 
 
