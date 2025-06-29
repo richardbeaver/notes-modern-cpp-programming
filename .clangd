@@ -1,2 +1,14 @@
 CompileFlags:
   CompilationDatabase: build/debug
+
+# Turn off clangd's `FastCheckFilter`
+# The clang-tidy `misc-const-correctness` check is generally disabled by this
+# filter, and is know to have a performance impact.
+# Try removing this declaration if clangd performance is degrading.
+# Relevant discussions:
+# https://github.com/clangd/clangd/discussions/2064
+# https://github.com/llvm/llvm-project/commit/e78165f0ba1e2fbf72b36a36c8560645b69a168a
+# https://github.com/llvm/llvm-project/issues/89758
+Diagnostics:
+  ClangTidy:
+    FastCheckFilter: None
