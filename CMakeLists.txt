@@ -8,6 +8,7 @@ set(SUBDIRECTORIES
   basic_concepts_i
   basic_concepts_ii
   basic_concepts_iii
+  basic_concepts_iv
 )
 
 
