@@ -20,6 +20,9 @@ Checks: >
   -readability-magic-numbers,
   -cppcoreguidelines-avoid-magic-numbers
 
-WarningsAsErrors: ''
-HeaderFilterRegex: '.*'
+# The checks after the space are specific to this project
+# They're ones that get in the way for "note-taking" code
+
+WarningsAsErrors: ""
+HeaderFilterRegex: ".*"
 FormatStyle: file
