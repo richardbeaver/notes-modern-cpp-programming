@@ -61,7 +61,7 @@ auto main() -> int {
 
     println("infinity\n");
     println("Division by 0 is generally undefined behavior");
-    println("integer division is has been showing both 0 and 1; "
+    println("integer division has been showing both 0 and 1; "
             "float division has been 'inf'");
     println("{}", 5 / 0);
     println("{}", 5.0 / 0);

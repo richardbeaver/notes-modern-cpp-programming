@@ -150,12 +150,12 @@ auto main() -> int {
         int x;
         int y;
     };
-    // warning about C-style arrays
+    // getting a warning about C-style arrays
     SB arr[] = {{.x = 1, .y = 2}, {.x = 3, .y = 4}, {.x = 5, .y = 6}};
-    // But I keep getting errors on these. not sure how to do this here
-    // array<SB, 3> arr = {{1, 2}, {3, 4}, {5, 6}};
-    // array<SB, 3> arr = {{.x = 1, .y = 2}, {.x = 3, .y = 4}, {.x = 5, .y =
-    // 6}};
+    // using initializer lists
+    array<SB, 3> _ = {{{1, 2}, {3, 4}, {5, 6}}};
+    array<SB, 3> _ = {{{.x = 1, .y = 2}, {.x = 3, .y = 4}, {.x = 5, .y = 6}}};
+
     for (auto [x1, y1] : arr) {
         println("{}, {}", x1, y1);
     }
@@ -164,6 +164,7 @@ auto main() -> int {
     enum class E : std::uint8_t { A, B, C };
     for (auto i : std::views::iota(0, 3)) {
         PRINT_VAR(i)
+        // Could static cast value here, or cast in each case label
         // switch (static_cast<E>(i)) {
         switch (i) {
         case (int)E::A:

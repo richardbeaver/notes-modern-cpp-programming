@@ -34,9 +34,9 @@ auto main() -> int {
     char c = 'c';
     char c2 = 53;
     std::cout << "printing a char: " << c << '\n';
-    std::cout << "printing a char defined as a number: " << c2 << '\n';
-    std::cout << "binary op on char converts to an int: " << +c << '\n';
-    std::cout << "binary op on number-defined char converts to an int (same "
+    std::cout << "printing a char defined with a number value: " << c2 << '\n';
+    std::cout << "unary op on char converts to an int: " << +c << '\n';
+    std::cout << "unary op on number-defined char converts to an int (same "
                  "number value): "
               << +c2 << '\n';
 

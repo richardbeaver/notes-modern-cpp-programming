@@ -56,7 +56,7 @@ auto main() -> int {
 
     // void pointer
 
-    // std::array<int, 3> arr = {1, 2, 3};
+    // std::array<int, 3> arr = {{1, 2, 3}};
     int arr[] = {1, 2, 3};
     void *v_ptr = nullptr;
     PRINT_VAR(sizeof(void *) == sizeof(int *)) // true
@@ -104,7 +104,7 @@ auto main() -> int {
     // malloc/free
     // - C functions
     // - only allocate and free memory blocks (in bytes)
-    int *ints = new int[3]();
+    int *ints = new int[3];
     std::fill_n(ints, 3, 23);
     for (int i = 0; i < 3; i++) {
         PRINT_VAR(ints[i])
@@ -219,7 +219,7 @@ auto main() -> int {
     // As a function argument:
 
     // void f(int &val) {}
-    // - `val` in never a nullpointer
+    // - `val` is never a nullpointer
 
     // void f(int (&arr)[3]) {}
     // - accepts only arrays of size 3
