@@ -224,6 +224,19 @@ auto main() -> int {
     // void f(int (&arr)[3]) {}
     // - accepts only arrays of size 3
 
+    //
+
+    int z = 3;
+    int &zref = z;
+
+    PRINT_VAR(z)             // 3
+    PRINT_VAR(zref)          // 3
+    PRINT_VAR(sizeof(z))     // 4
+    PRINT_VAR(sizeof(zref))  // 4
+    PRINT_VAR((void *)&z)    // 0x16fcce73c (on my run)
+    PRINT_VAR((void *)&zref) // 0x16fcce73c (on my run)
+    std::println();
+
     // ==========
 
     // `const` and Constant Expressions
