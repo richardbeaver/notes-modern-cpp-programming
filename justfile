@@ -1,31 +1,49 @@
+# Ex:
+# - Build one executable  - `just b basic_concepts_i`
+# - Build all             - `just ba`
+# - Run one executable    - `just r basic_concepts_i`
+# - Build and run one     - `just br basic_concepts_ii`
+
 default:
 	just --list
 
-new-build-debug: clean-debug build-debug
-new-build-release: clean-release build-release
 
+alias br := build-and-run
 build-and-run executable:
-	just build-debug
-	just run-debug {{executable}}
+	just build {{executable}}
+	just run {{executable}}
+
 
 # Build
-build-debug:
+
+alias b := build
+build executable:
+	cmake -S . -B build/debug -DCMAKE_BUILD_TYPE=Debug
+	cmake --build build/debug --parallel --target {{executable}}
+
+alias ba := build-all
+build-all:
 	cmake -S . -B build/debug -DCMAKE_BUILD_TYPE=Debug
 	cmake --build build/debug --parallel
 
-build-release:
+build-release executable:
 	cmake -S . -B build/release -DCMAKE_BUILD_TYPE=Release
-	cmake --build build/release --parallel
+	cmake --build build/release --parallel {{executable}}
+
 
 # Run
-run-debug executable:
+
+alias r := run
+run executable:
 	./build/debug/bin/{{executable}}
 
 run-release executable:
 	./build/release/bin/{{executable}}
 
+
 # Clean
-clean-debug:
+
+clean:
 	rm -rf build/debug
 
 clean-release:
