@@ -11,6 +11,7 @@ set(SUBDIRECTORIES
   basic_concepts_iv
   basic_concepts_v
   oop_i
+  oop_ii
 )
 
 
