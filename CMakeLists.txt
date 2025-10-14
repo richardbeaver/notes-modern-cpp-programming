@@ -12,6 +12,7 @@ set(SUBDIRECTORIES
   basic_concepts_v
   oop_i
   oop_ii
+  templates_metaprogramming_i
 )
 
 
