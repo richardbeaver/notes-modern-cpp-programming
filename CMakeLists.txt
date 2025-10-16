@@ -13,6 +13,7 @@ set(SUBDIRECTORIES
   oop_i
   oop_ii
   templates_metaprogramming_i
+  templates_metaprogramming_ii
 )
 
 
